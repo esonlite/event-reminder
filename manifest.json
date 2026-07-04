@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "事件提醒器",
+  "version": "1.0.0",
+  "description": "悬浮式事件提醒器，支持跑马灯通知和定时提醒",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
